@@ -1,0 +1,9 @@
+E:\WindowsForm\copydirectorytree\copydirectorytree\bin\Debug\copydirectorytree.exe.config
+E:\WindowsForm\copydirectorytree\copydirectorytree\bin\Debug\copydirectorytree.exe
+E:\WindowsForm\copydirectorytree\copydirectorytree\bin\Debug\copydirectorytree.pdb
+E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.csprojResolveAssemblyReference.cache
+E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.Form1.resources
+E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.Properties.Resources.resources
+E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.csproj.GenerateResource.Cache
+E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.exe
+E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.pdb
