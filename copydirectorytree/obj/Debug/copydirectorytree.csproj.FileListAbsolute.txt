@@ -7,3 +7,9 @@ E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.P
 E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.csproj.GenerateResource.Cache
 E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.exe
 E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.pdb
+E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.GenrateDirectoryTree.resources
+E:\WindowsForm\copydirectorytree\copydirectorytree\bin\Debug\ExcelDataReader.DataSet.dll
+E:\WindowsForm\copydirectorytree\copydirectorytree\bin\Debug\ExcelDataReader.dll
+E:\WindowsForm\copydirectorytree\copydirectorytree\bin\Debug\ExcelDataReader.xml
+E:\WindowsForm\copydirectorytree\copydirectorytree\bin\Debug\ExcelDataReader.DataSet.xml
+E:\WindowsForm\copydirectorytree\copydirectorytree\obj\Debug\copydirectorytree.LoadConfigExcel.resources

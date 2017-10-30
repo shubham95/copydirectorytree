@@ -24,10 +24,10 @@ namespace copydirectorytree
 
                     DirectoryInfo[] dirs = dir.GetDirectories();
                     // If the destination directory doesn't exist, create it.
-                    if (!Directory.Exists(destDirName))
-                    {
-                        Directory.CreateDirectory(destDirName);
-                    }
+                    //if (!Directory.Exists(destDirName))
+                    //{
+                    //    Directory.CreateDirectory(destDirName);
+                    //}
 
             if (!Directory.Exists(bakDirName))
             {
