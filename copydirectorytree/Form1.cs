@@ -22,8 +22,15 @@ namespace copydirectorytree
         {
 
 
-            Getdirectoriestree obj = new Getdirectoriestree();
-            obj.work();
+            //Getdirectoriestree obj = new Getdirectoriestree();
+            //obj.work();
+            Copyfileswithdirectory obj2 = new Copyfileswithdirectory();
+
+            string sourcefoldername= @"C:\Users\pandey\Desktop\testto";
+            string destfoldername= @"C:\Users\pandey\Desktop\delet";
+            string backfoldername= @"C:\Users\pandey\Desktop\bak";
+
+            obj2.DirectoryCopywithbak(sourcefoldername,destfoldername,backfoldername);
         }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Copyfileswithdirectory.cs" />
     <Compile Include="Directorytree.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
