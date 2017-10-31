@@ -60,16 +60,20 @@ namespace copydirectorytree
             if(SourceDirectory==string.Empty)
             {
                 //Message Box and Return
+                MessageBox.Show("Pls Select Source Directory");
                 return;
             }
 
             if (DestinationDirectory == string.Empty)
             {
                 //Message Box and Return
+                MessageBox.Show("Pls Select Destination Directory");
                 return;
             }
 
             Directorytree.DirectoryCopy(SourceDirectory,DestinationDirectory,true);
+
+            MessageBox.Show("Generated");
 
             // Message Box directoryTree generated
         }

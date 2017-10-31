@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChkFilestatus.cs" />
     <Compile Include="Copyfileswithdirectory.cs" />
     <Compile Include="Directorytree.cs" />
     <Compile Include="ExcelDataset.cs" />

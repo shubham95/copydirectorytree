@@ -37,7 +37,7 @@ namespace copydirectorytree
                     UseHeaderRow = true
                 }
             });
-
+            fs.Close();
             return result;
         }
     }

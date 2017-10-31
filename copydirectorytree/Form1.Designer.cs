@@ -30,8 +30,8 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,22 +54,22 @@
             this.panel1.Size = new System.Drawing.Size(440, 402);
             this.panel1.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(101, 86);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(265, 225);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Deploy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(-456, 8);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(440, 402);
             this.panel2.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(101, 115);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(265, 157);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Deploy";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
