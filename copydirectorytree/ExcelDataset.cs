@@ -34,7 +34,7 @@ namespace copydirectorytree
             {
                 ConfigureDataTable = (data) => new ExcelDataTableConfiguration()
                 {
-                    UseHeaderRow = true
+                    //UseHeaderRow = true
                 }
             });
             fs.Close();
