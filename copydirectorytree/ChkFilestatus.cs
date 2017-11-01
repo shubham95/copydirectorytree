@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace copydirectorytree
 {
@@ -68,6 +69,7 @@ namespace copydirectorytree
                 //Chk if file is locked or not
                 if (IsFileLocked(file))
                 {
+                    MessageBox.Show("The following file is currently used by another process : "+ file );
                     result= false;
                 }
                 //file.CopyTo(temppath, false);
