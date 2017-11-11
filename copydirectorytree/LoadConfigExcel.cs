@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -51,6 +52,7 @@ namespace copydirectorytree
             }
         }
 
+ 
         private void button2_Click(object sender, EventArgs e)
         {
             if(excelconfig== string.Empty)
@@ -107,11 +109,91 @@ namespace copydirectorytree
                 }
 
                 Copyfileswithdirectory obj = new Copyfileswithdirectory();
-                obj.DirectoryCopywithbak(source, dest, bakp);
+
+               string temp =  Path.GetFileName( source);
+
+               string backpfolder = Path.Combine(bakp, temp + "_"+DateTime.Now.ToString("yyyyMMddHHmmss"));
+
+
+               if (Directory.Exists(backpfolder) == false)
+               {
+                   Directory.CreateDirectory(backpfolder);
+               }
+               obj.DirectoryCopywithbak(source, dest, backpfolder);
+
+              
+               //ToDo WOrk For SQLS Scripts With ConnString 
+               
+               //-- chk if connection string is null or we dont have sqls folder 
+               using (SqlConnection connection = new SqlConnection(connstring))
+               {
+                   connection.Open();
+
+                   SqlCommand command = connection.CreateCommand();
+                   SqlTransaction transaction;
+
+                   // Start a local transaction.
+                   transaction = connection.BeginTransaction("SampleTransaction");
+
+                   // Must assign both transaction object and connection
+                   // to Command object for a pending local transaction
+                   command.Connection = connection;
+                   command.Transaction = transaction;
+
+                   try
+                   {
+                       string Sqls = Path.Combine(source, "SQLS");
+                      
+                       string[] sql = Directory.GetFiles(Sqls);
+                       foreach (string file in sql)
+                       {
+                           command.CommandText = File.ReadAllText(file);
+                           command.ExecuteNonQuery();
+                       }
+                       //command.CommandText =
+                       //    "Insert into Region (RegionID, RegionDescription) VALUES (100, 'Description')";
+                       //command.ExecuteNonQuery();
+                       //command.CommandText =
+                       //    "Insert into Region (RegionID, RegionDescription) VALUES (101, 'Description')";
+                       //command.ExecuteNonQuery();
+
+                       //// Attempt to commit the transaction.
+                       transaction.Commit();
+                   
+                       //Remove Message Box after Testing 
+                       MessageBox.Show("Commited Succesfully");
+                   }
+                   catch (Exception ex)
+                   {
+                       MessageBox.Show("Commit Exception Type:"+ex.GetType());
+                       MessageBox.Show("  Message: {0}", ex.Message);
+                       
+
+                       // Attempt to roll back the transaction.
+                       try
+                       {
+                           transaction.Rollback();
+                       }
+                       catch (Exception ex2)
+                       {
+                           // This catch block will handle any errors that may have occurred
+                           // on the server that would cause the rollback to fail, such as
+                           // a closed connection.
+
+                           MessageBox.Show("Rollback Exception Type: "+ex2.GetType());
+                           MessageBox.Show("  Message: {0}", ex2.Message);
+
+                         
+                       }
+                   }
+               }
+
 
             }
 
-            //ToDo WOrk For SQLS Scripts With ConnString 
+           
+
+
 
             MessageBox.Show("Transfer Completed Succesfully");
 

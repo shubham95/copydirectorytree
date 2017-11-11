@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string ConnectionString = @"Data Source=PANDEYSHUBHAM\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
+
+            //string ConnectionString = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                SqlTransaction objTransaction = connection.BeginTransaction();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter("updateemployees", connection);
+                // Specify the command type is an SP
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                // Associate the parameter with the stored procedure
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@id", 2);
+                dataAdapter.SelectCommand.Transaction = objTransaction;
+                DataSet dataset = new DataSet();
+                dataAdapter.Fill(dataset);
+                objTransaction.Rollback();
+
+            }
+        }
+    }
+}
